@@ -179,21 +179,31 @@ public void logCustomEvent(JoinPoint joinPoint, LogEvent logEvent) {
 
 ## Project Structure for AOP
 
-Recommended package structure:
+Current project structure:
+```
+src/main/java/com/aop_example/event_log_aop/
+├── EventLogAopApplication.java (with CommandLineRunner)
+├── aspect/
+│   └── LoggingAspect.java (@Before, @After, @Around advice)
+└── model/
+    └── Event.java (@Component with play() method)
+```
+
+Recommended expanded structure for larger projects:
 ```
 src/main/java/com/aop_example/event_log_aop/
 ├── EventLogAopApplication.java
 ├── aspect/
 │   ├── LoggingAspect.java
-│   └── PerformanceAspect.java
+│   └── PerformanceAspect.java (optional)
 ├── controller/
-│   └── EventController.java
+│   └── EventController.java (optional)
 ├── service/
-│   └── EventService.java
+│   └── EventService.java (optional)
 ├── model/
 │   └── Event.java
 └── annotation/
-    └── LogEvent.java
+    └── LogEvent.java (optional)
 ```
 
 ## Configuration
